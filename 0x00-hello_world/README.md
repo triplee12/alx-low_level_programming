@@ -3,4 +3,5 @@
 - 1-compiler -> shell script that compile main.c file to main.o
 - 2-assembler -> shell script that generate assemble language
 - 3-name -> shell script that creates an executable file to another named file
-- 4-puts.c -> c source code that prints string in a newline
+- 4-puts.c -> c source code that prints string on a newline using puts function
+- 5-printf.c -> c source code that print string on a newline using printf funtion
