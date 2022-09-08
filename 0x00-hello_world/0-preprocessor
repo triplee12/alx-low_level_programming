@@ -1,2 +1,2 @@
 #!/bin/bash
-printf $CFILE=myfirstc.c\n
+printf $CFILE=main.c\n
