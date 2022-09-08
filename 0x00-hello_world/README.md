@@ -7,3 +7,4 @@
 - 5-printf.c -> c source code that print string on a newline using printf funtion
 - 6-size.c -> print the size of various types on the computer
 - 100-intel -> shell script that generates the assembly code (Intel syntax) of a C code and save it in an output file
+- 101-quote.c -> c source code that prints string, followed by a newline to the standard error.
