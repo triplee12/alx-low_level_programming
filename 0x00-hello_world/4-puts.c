@@ -5,6 +5,7 @@
  * Description: Using puts function to print string in a newline
  * Return: 1 if error occurs. 0 otherwise
  */
+
 int main(void)
 {
 
