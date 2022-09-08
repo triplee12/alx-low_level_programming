@@ -5,3 +5,4 @@
 - 3-name -> shell script that creates an executable file to another named file
 - 4-puts.c -> c source code that prints string on a newline using puts function
 - 5-printf.c -> c source code that print string on a newline using printf funtion
+- 6-size.c -> print the size of various types on the computer
