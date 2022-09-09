@@ -27,3 +27,7 @@ Prints the string Last digit of [number] is [last_digit] and is followed by grea
 7-print_tebahpla.c: C program that prints the lowercase alphabet in reverse, followed by a new line, using only the putchar function exactly twice.
 
 8-print_base16.c: C program that prints all the numbers of base 16 in lowercase, followed by a new line, using only the putchar function exactly three times.
+
+- 9-print_comb.c: C program that prints all possible combinations of single-digit numbers, using only the putchar function exactly four times without any variables of type char:
+Numbers are separated by ,, followed by a space.
+Numbers are printed in ascending order.
