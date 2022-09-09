@@ -35,3 +35,10 @@ Numbers are printed in ascending order.
 -  10-print_comb2.c: C program that prints the numbers from 00 to 99 using only the putchar function exactly five times without any variables of type char:
 Numbers are separated by ,, followed by a space.
 Numbers are printed in ascending order, with two digits.
+
+101-print_comb4.c: C program that prints all possible different combinations of three digits using only the putchar function exactly six times without any variables of type char:
+Numbers are separated by ,, followed by a space.
+The three digits are different.
+012, 120, 102, 021, 201 and 210 are considered the same combination of the three digits 0, 1 and 2.
+Prints only the smallest combination of three digits.
+Numbers are printed in ascending order.
