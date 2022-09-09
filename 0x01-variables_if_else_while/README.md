@@ -31,3 +31,7 @@ Prints the string Last digit of [number] is [last_digit] and is followed by grea
 - 9-print_comb.c: C program that prints all possible combinations of single-digit numbers, using only the putchar function exactly four times without any variables of type char:
 Numbers are separated by ,, followed by a space.
 Numbers are printed in ascending order.
+
+-  10-print_comb2.c: C program that prints the numbers from 00 to 99 using only the putchar function exactly five times without any variables of type char:
+Numbers are separated by ,, followed by a space.
+Numbers are printed in ascending order, with two digits.
