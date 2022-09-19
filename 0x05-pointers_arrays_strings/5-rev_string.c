@@ -5,25 +5,21 @@
  * @s: valiable pointer that store the character string
  * Return: Always 0
  */
-
 void rev_string(char *s)
 {
-	int i;
-	char *begin_ptr, *end_ptr, ch;
+	int len, i, half;
+	char temp;
 
-	begin_ptr = s;
-	end_ptr = s;
+	for (len = 0; s[len] != '\0'; len++)
+	;
+	i = 0;
+	half = len / 2;
 
-	for (i = 0; i < s[i] - 1; i++)
-		end_ptr++;
-
-	for (i = 0; i < s[i] / 2; i++)
+	while (half--)
 	{
-		ch = *end_ptr;
-		*end_ptr = *begin_ptr;
-		*begin_ptr = ch;
-
-		begin_ptr++;
-		end_ptr--;
+		temp = s[len - i - 1];
+		s[len - i - 1] = s[i];
+		s[i] = temp;
+		i++;
 	}
 }
