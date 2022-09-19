@@ -9,8 +9,10 @@
 void puts2(char *str)
 {
 	int len;
-	for (len = 0; len < str[len] * 2; len++)
+
+	for (len = 0; len < str[len]; len++)
 	{
-		_putchar(str[len]);
+		if (str[len] % 2 == 0)
+			_putchar(str[len]);
 	}
 }
