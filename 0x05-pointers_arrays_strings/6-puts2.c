@@ -10,6 +10,6 @@ void puts2(char *str)
 {
 	int len = 0;
 
-	for (len; len < str[len] / 2; len++)
-		_putchar(str[len]);
+	for (len; len < str[len]; len++)
+		_putchar(str[len] + 2);
 }
