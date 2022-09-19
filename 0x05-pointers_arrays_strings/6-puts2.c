@@ -11,5 +11,11 @@ void puts2(char *str)
 	int len = 0;
 
 	for (len; len < str[len]; len++)
-		_putchar(str[len] + 2);
+	{
+		if(str[len] % 2 == 0)
+		{
+			_putchar(str[len]);
+			*str++;
+		}
+	}
 }
