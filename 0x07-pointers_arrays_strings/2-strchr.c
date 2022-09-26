@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * *_strchr(char *s, char c) - print a character string from a pointer string
- * @s: pointer string to locate a character from
- * @c: character constant to search for in a pointer string
- * Return: the first occurrence of the character constant
+ * _strchr - print a character string from a pointer string
+ * @s: Pointer string to locate a character from
+ * @c: Character constant to search for in a pointer string
+ * Return: The first occurrence of the character constant
  */
 
 char *_strchr(char *s, char c)

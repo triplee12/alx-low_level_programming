@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strspn(char *s, char *accept) - Get the length of a prefix substring
+ * _strspn - Get the length of a prefix substring
  * @s: Pointer string to check
  * @accept: Poiter string of substring
  * Return: The number of bytes
@@ -24,6 +24,5 @@ unsigned int _strspn(char *s, char *accept)
 			break;
 		s++;
 	}
-
 	return (s - s1);
 }
