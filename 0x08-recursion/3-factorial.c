@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * factorial() - Prints the factorial of a given number
+ * factorial - Prints the factorial of a given number
  * @n: The number to factorize
  * Return: -1 if lower than 0
  */
