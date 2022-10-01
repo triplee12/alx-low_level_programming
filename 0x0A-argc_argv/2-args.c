@@ -1,15 +1,45 @@
 #include "main.h"
-#include <stdio.h>
+
+void print_array_elements(char *str);
 
 /**
- * printargname - Print the name of argument passed
- * @argc: Program argument count
- * @argv: Program argument value
- * Return: Nothing
- */
+* main - Prints all arguments it receives
+*
+* @argc: Length of @argv, integer
+*
+* @argv: Array of strings of the arguments of this program
+*
+* Return: 0, success
+*/
 
-void printargname(int argc, char argv[])
+int main(int argc, char *argv[])
 {
-	for (int i = 0; i < argc; i++)
-		printf("%s\n", argv[i]);
+	int i;
+
+	for (i = 0; i < argc; i++)
+	{
+		print_array_elements(argv[i]);
+		_putchar('\n');
+	}
+
+	return (0);
+}
+
+/**
+* print_array_elements - Prints all char of a string
+*
+* @str: Pointer to string
+*
+* Return: void
+*/
+
+void print_array_elements(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
 }

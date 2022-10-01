@@ -1,35 +1,34 @@
-#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
- * additionnum - Calculate sum of numbers
- * @n1: First number
- * @...: Optional arguments
- * Return: 0 on successful, otherwise 1
- */
+* main - adds numbers
+* @argc: number of arguments passed to the function
+* @argv: argument vector of pointers to strings
+*
+* Return: 0 if no errors, else 1
+*/
 
-int additionnum(int n1, ...)
+int main(int argc, char *argv[])
 {
-	int result = 0;
+	int a = 0, i, j;
 
-	va_list argptr;
-	va_start(argptr, n1);
-
-	if (n1 == '\0')
-		printf("0\n");
-	if else (n1 != *int)
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (isdigit(argv[i][j]) == 0)
+			{
+				puts("Error");
+				return (1);
+			}
+		}
 	}
-	else
+	for (i = 1; i < argc; i++)
 	{
-		for (int i = 0; i < n1; ++i)
-			result += va_arg(argptr, int);
-		printf("%d\n", result);
+		a += atoi(argv[i]);
 	}
-
-	va_end(argptr);
-
+	printf("%d\n", a);
 	return (0);
 }

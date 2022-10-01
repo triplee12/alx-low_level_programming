@@ -1,15 +1,36 @@
 #include "main.h"
-#include <stdio.h>
+
+void print_number(int num);
 
 /**
- * printargsnum - Print number of argument passed
- * @argc: Program argument count
- * @argv: Program argument value
- * Return: Nothing
- */
+* main - Prints the number of arguments passed into it
+*
+* @argc: Length of @argv
+*
+* @argv: Array of strings of the programs arguments
+*
+* Return: 0, Success
+*/
 
-void printargsnum(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-	for (int i = 0; i < argc; ++i)
-		printf("%d\n", argc);
+	print_number(--argc);
+	_putchar('\n');
+	return (0);
+}
+
+/**
+* print_number - prints number with _putchar
+*
+* @num: inter, number to be printed
+*
+* Return: void
+*/
+
+void print_number(int num)
+{
+	if (num / 10)
+		print_number(num / 10);
+
+	_putchar(num % 10 + '0');
 }
