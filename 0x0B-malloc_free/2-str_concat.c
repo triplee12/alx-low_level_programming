@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -14,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int s1_len = 0;
 	unsigned int s2_len = 0;
 	char *ptr_mem;
-	unsigned i, j;
+	unsigned int i, j;
 
 	if (s1 == NULL)
 		s1 = "";
