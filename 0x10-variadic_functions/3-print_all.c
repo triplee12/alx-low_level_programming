@@ -1,119 +1,50 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 
-void (*get_func(char identifier, struct format_struct *fmt_arr))(va_list *);
-void print_char(va_list *arg);
-void print_int(va_list *arg);
-void print_float(va_list *arg);
-void print_string(va_list *arg);
-
 /**
-* print_all - prints anything(any data type)
-* @format: pointer to string of data format types
-*/
-
+ * print_all - prints all
+ * @format: param
+ */
 void print_all(const char * const format, ...)
 {
-	unsigned int j = 0;
-	char *separator = "";
+	va_list valist;
+	unsigned int i = 0, j, k = 0;
+	char *str;
+	const char t_arg[] = "cifs";
 
-	format_struct_ptr fmt_arr[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{'\0', NULL}
-	};
-	void (*get_func_ptr)(va_list *);
-	va_list args;
-
-	va_start(args, format);
-
-	while (format && format[j] != '\0')
+	va_start(valist, format);
+	while (format && format[i])
 	{
-		get_func_ptr = get_func(format[j], fmt_arr);
-
-		if (get_func_ptr)
+		j = 0;
+		while (t_arg[j])
 		{
-			printf("%s", separator);
-			get_func_ptr(&args);
-			separator = ", ";
+			if (format[i] == t_arg[j] && k)
+			{
+				printf(", ");
+				break;
+			} j++;
 		}
-
-		j++;
-	}
-
-	va_end(args);
-	printf("\n");
-}
-
-/**
-* get_func - gets corresponding function of format type
-* @fmt_arr: format types array
-* @identifier: format type
-* Return: pointer to function (SUCCESS) or
-* NULL (FAILURE)
-*/
-
-void (*get_func(char identifier, struct format_struct *fmt_arr))(va_list *)
-{
-	int i = 0;
-
-	while (fmt_arr[i].format)
-	{
-		if (fmt_arr[i].format == identifier)
+		switch (format[i])
 		{
-			return (fmt_arr[i].fmt_print_func);
-		}
-
-		i++;
+		case 'c':
+			printf("%c", va_arg(valist, int)), k = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(valist, int)), k = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(valist, double)), k = 1;
+			break;
+		case 's':
+			str = va_arg(valist, char *), k = 1;
+			if (!str)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+		} i++;
 	}
-
-	return (fmt_arr[i].fmt_print_func);
-}
-
-/**
-* print_char - prints a char
-* @arg: pointer to a char
-*/
-
-void print_char(va_list *arg)
-{
-	printf("%c", va_arg(*arg, int));
-}
-
-/**
-* print_int - prints an int
-* @arg: pointer to int
-*/
-
-void print_int(va_list *arg)
-{
-	printf("%d", va_arg(*arg, int));
-}
-
-/**
-* print_float - prints a float data type
-* @arg: pointer to float
-*/
-
-void print_float(va_list *arg)
-{
-	printf("%f", va_arg(*arg, double));
-}
-
-/**
-* print_string - prints a string
-* @arg: pointer to string
-*/
-
-void print_string(va_list *arg)
-{
-	char *str[2];
-	int i;
-
-	str[0] = va_arg(*arg, char *);
-	str[1] = "(nil)";
-	i = str[0] == NULL;
-	printf("%s", str[i]);
+	printf("\n"), va_end(valist);
 }
