@@ -2,6 +2,21 @@
 #include "lists.h"
 
 /**
+ * _strlen - returns the length of a string
+ * @s: the string whose length to return
+ * Return: the length of the string
+ */
+int _strlen(const char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}
+
+/**
  * add_node - Counts the elements in a linked list.
  * @head: head pointer pointer
  * @str: String data for the next element
@@ -12,28 +27,15 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	int c = 0;
-	list_t *new = malloc(sizeof(list_t));
+	list_t *new;
+	int length = _strlen(str);
 
+	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
-
 	new->str = strdup(str);
-	new->len = strlen(str);
-	new->next = NULL;
-
-	print_list(new);
-
-	while (*head != NULL)
-	{
-		printf("%d\n", c++);
-		*head = *head->next;
-	}
-
-	*head = *new;
-
-	free(new);
-
-	return (*head);
+	new->len = length;
+	new->next = *head;
+	*head = new;
+	return (new);
 }
-
