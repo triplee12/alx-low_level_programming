@@ -7,6 +7,7 @@
  * Description: Prints all the elements of a list in order.
  * Return: The size of the list.
  */
+
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
@@ -24,3 +25,4 @@ size_t print_list(const list_t *h)
 
 	return (count);
 }
+
