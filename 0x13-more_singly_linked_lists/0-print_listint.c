@@ -9,6 +9,7 @@
  * Description: prints all the elements of a listint_t list
  * Return: the number of nodes.
  */
+
 size_t print_listint(listint_t *h)
 {
 	size_t size = 1;
